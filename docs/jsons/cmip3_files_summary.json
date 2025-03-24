@@ -1,0 +1,47 @@
+[
+  {
+    "index_name": "ANL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ACMIP3&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-21 04:33:22.869590",
+    "stop time": "2025-03-21 04:35:49.531768",
+    "numFound": "82172",
+    "queried": 100.0,
+    "ingest submitted": 100.0,
+    "ingest checked": 0,
+    "source_index_id": "https://esgf-node.cels.anl.gov/",
+    "ingest_index_id": "c0173b0c-5587-437a-a912-ef09b6d14e9c",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate anl public CMIP3 --prod --meta files",
+    "hostname": "opendtn123m.ccs.ornl.gov",
+    "error": "no error"
+  },
+  {
+    "index_name": "LLNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ACMIP3&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-21 04:21:15.837921",
+    "stop time": "2025-03-21 04:24:38.590503",
+    "numFound": "82172",
+    "queried": 100.0,
+    "ingest submitted": 100.0,
+    "ingest checked": 0,
+    "source_index_id": "http://esgf-node.llnl.gov",
+    "ingest_index_id": "c0173b0c-5587-437a-a912-ef09b6d14e9c",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate llnl public CMIP3 --prod --meta files",
+    "hostname": "opendtn121m.ccs.ornl.gov",
+    "error": "no error"
+  },
+  {
+    "index_name": "ORNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ACMIP3&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-21 04:44:37.854180",
+    "stop time": "2025-03-21 04:48:01.250843",
+    "numFound": "82172",
+    "queried": 100.0,
+    "ingest submitted": 100.0,
+    "ingest checked": 0,
+    "source_index_id": "http://127.0.0.1:8983",
+    "ingest_index_id": "c0173b0c-5587-437a-a912-ef09b6d14e9c",
+    "cmd_line": "/home/minxu/bin/app.py migrate ornl public CMIP3 --prod --meta files",
+    "hostname": "fedora",
+    "error": "no error"
+  }
+]

@@ -1,0 +1,57 @@
+:root > * {
+  --md-primary-fg-color:        #00662c;
+  --md-primary-fg-color--light: #00662c;
+  --md-primary-fg-color--dark:  #00662C;
+
+  --md-primary-bg-color: hsla(0, 0%, 100%, 0.7);
+  --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+  --md-primary-bg-color--dark:  hsla(var(--md-hue), 15%, 14%, 1);
+
+  --md-footer-bg-color: #00454D;
+  --md-footer-bg-color--light: #373a36;
+  --md-footer-bg-color--dark: #373a36;
+}
+
+#map {
+  width: 800px;
+  height: 600px;
+  margin: 0;
+}
+
+.map {
+  width: 800px;
+  height: 600px;
+  margin: 0;
+}
+
+.md-typeset figure {
+  text-align: left;
+  background: darkslategray;
+  width: 100%
+}
+
+.md-typeset figcaption {
+  max-width: 100%;
+  font-style: normal;
+  margin-left: 2em;
+}
+
+.md-typeset img[align="left"] {
+   margin-right: 2em;
+}
+
+.md-typeset img[align="right"] {
+   margin-left: 2em;
+}
+
+.mdx-spotlight__feature {
+  display: flex;
+  flex: 1 0 48%;
+  flex-flow: row nowrap;
+  gap: 3.2rem;
+  margin: 0 0 3.2rem;
+}
+
+.mdx-spotlight {
+  margin: 2em 0;
+}
