@@ -1,0 +1,50 @@
+[
+  {
+    "index_name": "ANL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3Ainput4MIPs&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-27 04:24:30.961226",
+    "stop time": "2025-03-27 04:24:43.059737",
+    "numFound": "5523",
+    "queried": 5523,
+    "ingest submitted": 5523,
+    "ingest checked": 5523,
+    "source_index_id": "https://esgf-node.cels.anl.gov/",
+    "ingest_index_id": "3c71c174-c8c8-43e5-994c-10dd4251579a",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate anl stage input4MIPs --prod --meta datasets",
+    "hostname": "opendtn123m.ccs.ornl.gov",
+    "error": "no error",
+    "restart": "no restart info"
+  },
+  {
+    "index_name": "LLNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3Ainput4MIPs&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-28 02:52:03.414293",
+    "stop time": "2025-03-28 02:52:24.812136",
+    "numFound": "7254",
+    "queried": 7254,
+    "ingest submitted": 7254,
+    "ingest checked": 7254,
+    "source_index_id": "http://esgf-node.llnl.gov",
+    "ingest_index_id": "3c71c174-c8c8-43e5-994c-10dd4251579a",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate llnl stage input4MIPs --prod --meta datasets",
+    "hostname": "opendtn121m.ccs.ornl.gov",
+    "error": "no error",
+    "restart": "no restart info"
+  },
+  {
+    "index_name": "ORNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3Ainput4MIPs&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-28 03:10:59.489413",
+    "stop time": "2025-03-28 03:11:00.447358",
+    "numFound": "219",
+    "queried": 219,
+    "ingest submitted": 219,
+    "ingest checked": 219,
+    "source_index_id": "http://127.0.0.1:8983",
+    "ingest_index_id": "3c71c174-c8c8-43e5-994c-10dd4251579a",
+    "cmd_line": "/home/minxu/bin/app.py migrate ornl stage input4MIPs --prod --meta datasets",
+    "hostname": "fedora",
+    "error": "no error",
+    "restart": "no restart info"
+  }
+]
