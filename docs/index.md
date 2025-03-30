@@ -41,31 +41,30 @@ from [ESGF-1.5-desgin](https://github.com/esgf2-us/esgf-1.5-design/tree/main)
 !!! info "Read-only Projects"
 
 === "CMIP3"
-
     <div id="tab_cmip3_datasets"></div>
 
 
 === "CMIP5"
-
     <div id="tab_cmip5_datasets"></div>
 
 === "CMIP6"
-
     <div id="tab_cmip6_datasets"></div>
 
-
-
 === "CREATE-IP" 
+    <div id="tab_create-ip_datasets"></div>
 
-=== "E3SM-supplement" 
+=== "e3sm-supplement" 
+    <div id="tab_e3sm-supplement_datasets"></div>
 
 
 === "GeoMIP" 
+    <div id="tab_geomip_datasets"></div>
 
 === "LUCID"
-
+    <div id="tab_lucid_datasets"></div>
 
 === "TAMIP"
+    <div id="tab_tamip_datasets"></div>
 
 
 
@@ -73,59 +72,69 @@ from [ESGF-1.5-desgin](https://github.com/esgf2-us/esgf-1.5-design/tree/main)
 !!! info "Read-Write Projects"
 
 === "CMIP6Plus"
+    <div id="tab_cmip6plus_datasets"></div>
 
 === "DRCDP"
+    <div id="tab_drcdp_datasets"></div>
 
 === "E3SM" 
+    <div id="tab_e3sm_datasets"></div>
 
 === "input4MIPs" 
+    <div id="tab_input4mips_datasets"></div>
 
 === "obs4MIPs"
+    <div id="tab_obs4mips_datasets"></div>
 
 ### Files
 
 !!! info "Read-only Projects"
 
 === "CMIP3"
-
     <div id="tab_cmip3_files"></div>
 
 
 === "CMIP5"
-
     <div id="tab_cmip5_files"></div>
 
 === "CMIP6"
-
     <div id="tab_cmip6_files"></div>
 
-
-
 === "CREATE-IP"
+    <div id="tab_create-ip_files"></div>
 
-=== "E3SM-supplement"
+=== "e3sm-supplement"
+    <div id="tab_e3sm-supplement_files"></div>
 
 
 === "GeoMIP"
+    <div id="tab_geomip_files"></div>
 
 === "LUCID"
+    <div id="tab_lucid_files"></div>
 
 
 === "TAMIP"
+    <div id="tab_tamip_files"></div>
 
 
 <hr>
 !!! info "Read-Write Projects"
 
 === "CMIP6Plus"
+    <div id="tab_cmip6plus_files"></div>
 
 === "DRCDP"
+    <div id="tab_drcdp_files"></div>
 
 === "E3SM" 
+    <div id="tab_e3sm_files"></div>
 
 === "input4MIPs" 
+    <div id="tab_input4mips_files"></div>
 
 === "obs4MIPs"
+    <div id="tab_obs4mips_files"></div>
 
 <script>
   // Sample data
@@ -206,7 +215,8 @@ from [ESGF-1.5-desgin](https://github.com/esgf2-us/esgf-1.5-design/tree/main)
     // cmip3 tab
 
     const metas = ["datasets", "files"];
-    const projs = ["cmip3", "cmip5", "cmip6"];
+    const projs = ["cmip3", "cmip5", "cmip6", "create-ip", "e3sm-supplement", "geomip", "lucid", "tamip",
+     "cmip6plus", "e3sm", "drcdp", "input4mips", "obs4mips"];
 
    
     metas.forEach(meta => { 
@@ -249,12 +259,13 @@ from [ESGF-1.5-desgin](https://github.com/esgf2-us/esgf-1.5-design/tree/main)
                             "<div><strong>Start & End time:</strong> " + data["start time"].slice(0, -7) + '--' + data["stop time"].slice(0,-7)  + 
                       "</div><div><strong>Query String:</strong> " + data["query string"] + 
                       "</div><div><strong>numFound:</strong> " + data.numFound + 
-                      "</div><div><strong>Queried (%):</strong> " + parseFloat(data.queried).toFixed(2) + 
-                      "</div><div><strong>Ingest submitted (%):</strong> " + parseFloat(data["ingest submitted"]).toFixed(2) + 
-                      "</div><div><strong>Ingest checked (%):</strong> " + parseFloat(data["ingest checked"]).toFixed(2) + 
+                      "</div><div><strong>Queried:</strong> " + parseFloat(data.queried).toFixed(2) + 
+                      "</div><div><strong>Ingest submitted:</strong> " + parseFloat(data["ingest submitted"]).toFixed(2) + 
+                      "</div><div><strong>Ingest succeed:</strong> " + parseFloat(data["ingest checked"]).toFixed(2) + 
                       "</div><div><strong>Command line:</strong> " + data.cmd_line + 
                       "</div><div><strong>Hostname:</strong> " + data.hostname + 
                       "</div><div><strong>Error message:</strong> " + data.error + 
+                      "</div><div><strong>Restart message:</strong> " + data.restart + 
                       "</div></td>"
 
               rowTabletr.innerHTML = cellContents;

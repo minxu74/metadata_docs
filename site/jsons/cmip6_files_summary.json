@@ -1,0 +1,47 @@
+[
+  {
+    "index_name": "ANL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ACMIP6&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-22 03:26:19.665167",
+    "stop time": "2025-03-23 04:25:41.271549",
+    "numFound": "23119490",
+    "queried": 57.00601527109811,
+    "ingest submitted": 100.0,
+    "ingest checked": 0,
+    "source_index_id": "https://esgf-node.cels.anl.gov/",
+    "ingest_index_id": "c0173b0c-5587-437a-a912-ef09b6d14e9c",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate anl public CMIP6 --prod --meta files",
+    "hostname": "opendtn123m.ccs.ornl.gov",
+    "error": "2025-03-23 00:25:42,099 - _make_request - ERROR - Request failed at https://esgf-node.cels.anl.gov//solr/files/select: 525 Server Error:  for url: https://esgf-node.cels.anl.gov//solr/files/select?sort=id+asc&rows=500&cursorMark=AoE%2FgQFDTUlQNi5IaWdoUmVzTUlQLklOTS5JTk0tQ001LUguY29udHJvbC0xOTUwLnIxaTFwMWYxLmRheS5odXJzLmdyMS52MjAxOTA4MTIuaHVyc19kYXlfSU5NLUNNNS1IX2NvbnRyb2wtMTk1MF9yMWkxcDFmMV9ncjFfMTk2MDAxMDEtMTk2NDEyMzEubmN8ZWFnbGUuYWxjZi5hbmwuZ292&wt=json&q=project%3ACMIP6&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D\n"
+  },
+  {
+    "index_name": "LLNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ACMIP6&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-22 06:18:06.630182",
+    "stop time": "2025-03-23 15:29:16.004640",
+    "numFound": "38858543",
+    "queried": 35.21619428705806,
+    "ingest submitted": 100.0,
+    "ingest checked": 0,
+    "source_index_id": "http://esgf-node.llnl.gov",
+    "ingest_index_id": "c0173b0c-5587-437a-a912-ef09b6d14e9c",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate llnl public CMIP6 --prod --meta files",
+    "hostname": "opendtn121m.ccs.ornl.gov",
+    "error": "no error"
+  },
+  {
+    "index_name": "ORNL",
+    "query string": "",
+    "start time": "",
+    "stop time": "",
+    "numFound": "",
+    "queried": "",
+    "ingest submitted": 0,
+    "ingest checked": 0,
+    "source_index_id": "",
+    "ingest_index_id": "",
+    "cmd_line": "",
+    "hostname": "",
+    "error": ""
+  }
+]

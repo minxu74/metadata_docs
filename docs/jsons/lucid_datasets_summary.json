@@ -1,0 +1,50 @@
+[
+  {
+    "index_name": "ANL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ALUCID&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-27 04:21:10.443786",
+    "stop time": "2025-03-27 04:21:10.443786",
+    "numFound": "0",
+    "queried": 0,
+    "ingest submitted": null,
+    "ingest checked": null,
+    "source_index_id": "https://esgf-node.cels.anl.gov/",
+    "ingest_index_id": "a8ef4320-9e5a-4793-837b-c45161ca1845",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate anl public LUCID --prod --meta datasets",
+    "hostname": "opendtn123m.ccs.ornl.gov",
+    "error": "no error",
+    "restart": "no restart info"
+  },
+  {
+    "index_name": "LLNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ALUCID&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-28 02:39:39.433517",
+    "stop time": "2025-03-28 02:39:41.121097",
+    "numFound": "131",
+    "queried": 131,
+    "ingest submitted": 131,
+    "ingest checked": 131,
+    "source_index_id": "http://esgf-node.llnl.gov",
+    "ingest_index_id": "a8ef4320-9e5a-4793-837b-c45161ca1845",
+    "cmd_line": "/ccsopen/home/mfx/bin/app.py migrate llnl public LUCID --prod --meta datasets",
+    "hostname": "opendtn121m.ccs.ornl.gov",
+    "error": "no error",
+    "restart": "no restart info"
+  },
+  {
+    "index_name": "ORNL",
+    "query string": "sort=id+asc&rows=500&cursorMark=%2A&wt=json&q=project%3ALUCID&fq=_timestamp%3A%5B%2A+TO+2025-03-16T00%3A00%3A00Z%5D",
+    "start time": "2025-03-28 02:56:12.875887",
+    "stop time": "2025-03-28 02:56:13.060340",
+    "numFound": "131",
+    "queried": 131,
+    "ingest submitted": 131,
+    "ingest checked": null,
+    "source_index_id": "http://127.0.0.1:8983",
+    "ingest_index_id": "a8ef4320-9e5a-4793-837b-c45161ca1845",
+    "cmd_line": "/home/minxu/bin/app.py migrate ornl public LUCID --prod --meta datasets",
+    "hostname": "fedora",
+    "error": "no error",
+    "restart": "no restart info"
+  }
+]
