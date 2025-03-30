@@ -6,7 +6,7 @@ name: build and deploy
 on:
    push:
       branches:
-         - master
+         - main
 
 
 jobs:
@@ -38,8 +38,6 @@ jobs:
          - name: install-python-deps
            run: pip install -r requirements.txt
 
-         - name: pre-processing
-           run: python src/bibtex2markdown.py
 
          - name: build-docs
            run: |

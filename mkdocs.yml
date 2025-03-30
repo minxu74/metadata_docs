@@ -66,9 +66,6 @@ markdown_extensions:
 
 # plugins
 plugins:
-   - social:
-        cards_layout_options:
-           font_family: Raleway
    - search
    - include-markdown:
         encoding: ascii
@@ -81,4 +78,9 @@ plugins:
         start: <!--start-->
         end: <!--end-->
         recursive: true
+
+nav:  
+   - About:
+       - index.md
+
 
