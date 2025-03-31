@@ -164,7 +164,7 @@ title: Migration Status
                   max:100,
                   color:["green", "orange", "red"],
                   legend: function(value){return parseFloat(value).toFixed(1) + "%"},
-                  legendColor:"#000000",
+                  legendColor:"inherit",
                   legendAlign:"center",
               }
             }
@@ -215,7 +215,7 @@ title: Migration Status
           },
           data: data,
           columns:[
-              {title:"Solr Index -> Public Index", field:"index_name", sorter:"string"},
+              {title:"Solr Index -> Public Index", field:"index_name", formatter:"textarea", vertAlign:"middle", sorter:"string"},
           ],
 
           rowFormatter:function(row){
@@ -229,14 +229,13 @@ title: Migration Status
 
               //define a table layout structure and set width of row
               rowTable = document.createElement("table")
-              //rowTable.style.width = (width - 18) + "px";
+              rowTable.style.width = (width - 18) + "px";
               rowTable.style.width = "800px";
 
               rowTabletr = document.createElement("tr");
 
               //add image on left of row
-              //cellContents = "<td><img src='/sample_data/row_formatter/" + data.image + "'></td>";
-              cellContents = "<td><div>" +  data.index_name + "</div></td>";
+              cellContents = "<td text-align: middle;><div>" +  data.index_name + "</div></td>";
 
               if ((parseInt(data["page ingested"]) - parseInt(data["page skipped"]))  == parseInt(data["page checked"])) {
                   var ingest_success = "<span style='color:green;font-weight:bold;'>" + parseInt(data["page checked"]) + "</span>";

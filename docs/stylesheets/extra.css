@@ -59,3 +59,42 @@
 .mdx-spotlight {
   margin: 2em 0;
 }
+
+.tabulator {
+  font-size: 0.64rem;
+}
+
+[data-md-color-scheme="slate"] {
+  .tabulator-row .tabulator-cell {
+    background-color: var(--md-primary-bg-color--dark); 
+  }
+  .tabulator .tabulator-header .tabulator-col {
+    background-color: var(--md-primary-bg-color--dark);
+  }
+
+
+  .tabulator .tabulator-header .tabulator-header-contents {
+    background-color: var(--md-primary-bg-color--dark);
+  }
+
+  .tabulator-row {
+    background-color: var(--md-primary-bg-color--dark);
+    border-bottom: 0px;
+  }
+  .tabulator-row .tabulator-row-even {
+    background-color: var(--md-primary-bg-color--dark);
+  }
+  .tabulator-row .tabulator-row-even {
+    background-color: var(--md-primary-bg-color--dark);
+  }
+}
+
+
+
+table tr td{
+  border:none;
+}
+
+table tr td div{
+  padding:3px;
+}
