@@ -25,6 +25,9 @@ theme:
         toggle:
           icon: material/desk-lamp-on
           name: Switch to light mode
+   features:
+      - navigation.tabs
+
 
 
 extra_javascript:
@@ -82,5 +85,9 @@ plugins:
 nav:  
    - About:
        - index.md
+   - Migration:
+       - Migration/index.md
+   - Synchronization:
+       - Synchronization/index.md
 
 
