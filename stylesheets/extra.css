@@ -12,6 +12,10 @@
   --md-footer-bg-color--dark: #373a36;
 }
 
+.mdx-green-color {
+  color: green;
+}
+
 #map {
   width: 800px;
   height: 600px;
