@@ -268,6 +268,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Notes/notes/" class="md-tabs__link">
+          
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -591,6 +609,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Notes/notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -681,6 +765,59 @@
 <li><a href="https://github.com/esgf2-us/esgf-1.5-design/blob/main/changes.md">changes.md</a></li>
 <li><a href="https://github.com/esgf2-us/esgf-1.5-design/blob/main/indexes.md">indexes.md</a></li>
 </ol>
+<!--
+
+# This is topic 
+
+<pre class="mermaid"><code>graph LR
+  A[Start] --&gt; B{Error?};
+  B --&gt;|Yes| C[Hmm...];
+  C --&gt; D[Debug];
+  D --&gt; B;
+  B ----&gt;|No| E[Yay!];</code></pre>
+
+<pre class="mermaid"><code>pie title Public Index
+    "Used" : 71
+    "Available" : 29</code></pre>
+
+<div style="display: flex; justify-content: space-between;">
+
+
+<div style=style="height: 500px;">
+<pre class="mermaid"><code>%%{init: {"pie": {"textPosition": 0.5}, "themeVariables": {"pieOuterStrokeWidth": "5px"}, "useMaxWidth":false}, "useWidth":500 }%%
+pie title CMIP6Plus Index
+    "Datasets" : 386
+    "Files" : 85
+    "Empty" : 15</code></pre>
+
+</div>
+
+
+<div style="height: 500px;">
+<pre class="mermaid"><code>%%{init: {"pie": {"textPosition": 0.5}, "themeVariables": {"pieOuterStrokeWidth": "5px"}, "useMaxWidth":false}, "useWidth":500 }%%
+pie showData
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5</code></pre>
+</div>
+</div>
+
+??? note "Comparison Diagrams"
+
+    <pre class="mermaid"><code>pie showData title CMIP6 Dataset
+    "ANL" : 5686552
+    "LLNL" : 9057750
+    "ORNL" : 5963081
+    "Imbalance" :  1</code></pre>
+
+    <pre class="mermaid"><code>pie showData title CMIP6 File
+    "ANL" : 386
+    "LLNL" : 85
+    "ORNL" : 15
+    "Imbalance" : 1</code></pre>
+-->
 
 
 
