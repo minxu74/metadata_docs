@@ -98,3 +98,14 @@ table tr td{
 table tr td div{
   padding:3px;
 }
+
+/* Set a fixed size for all pie charts */
+.mermaid .pieCircle {
+  r: 100px !important; /* Adjust radius as needed */
+}
+
+/* Or control the SVG container */
+.mermaid svg {
+  width: 300px;
+  height: 300px;
+}

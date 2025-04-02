@@ -39,6 +39,7 @@ extra_css:
   - https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator_bootstrap5.min.css
   - stylesheets/extra.css
 
+
 # extensions
 markdown_extensions:
    - abbr
@@ -89,5 +90,5 @@ nav:
        - Migration/index.md
    - Synchronization:
        - Synchronization/index.md
-
-
+   - Notes:
+       - Notes/notes.md
