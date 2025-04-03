@@ -640,32 +640,80 @@
   <h1>Notes</h1>
 
 <ol>
-<li>The Solr query in the migration uses the cursor query method, and the <code>cursorMark</code> from the cursor query is recorded in a migration database and is used for restart purposes.</li>
-<li>The cursor query needs special permissions to the Solr indexes, i.e., the IP address of the machine in which the cursor query is made needs to be included in the white-lists of the indexes.</li>
-<li>There are <code>project=cmip6</code> and <code>project=CMIP6</code>, <code>project=e3sm</code> and <code>project=E3SM</code>. It found that lower case <code>cmip6</code> and upper case <code>E3SM</code> were used by the retracted documents, so only the <code>CMIP6</code> and <code>e3sm</code> were migrated to the Globus indexes.</li>
-<li>Generally, the size of 500 documents for the CMIP projects are much less than the maximum size (10 MB) for ingestion. However, for <code>project=e3sm</code> and <code>project=e3sm-supplement</code>, 
-the size of <strong>500</strong> documents are larger than 10 MB, so we use <code>rows=100</code> in the migration of <code>e3sm</code> and <code>e3sm-supplement</code> projects, and <strong>1500</strong> for other projects.</li>
-<li>Changes to the Solr document:<ul>
+<li>
+<p>The Solr query in the migration uses the cursor query method, and the <code>cursorMark</code> from the cursor query is recorded in a migration database and is used for restart purposes.</p>
+</li>
+<li>
+<p>The cursor query needs special permissions to the Solr indexes, i.e., the IP address of the machine in which the cursor query is made needs to be included in the white-lists of the indexes.</p>
+</li>
+<li>
+<p>There are <code>project=cmip6</code> and <code>project=CMIP6</code>, <code>project=e3sm</code> and <code>project=E3SM</code>. It found that lower case <code>cmip6</code> and upper case <code>E3SM</code> were used by the retracted documents, so only the <code>CMIP6</code> and <code>e3sm</code> were migrated to the Globus indexes.</p>
+</li>
+<li>
+<p>Generally, the size of 500 documents for the CMIP projects is much less than the maximum size (10 MB) for ingestion. However, for <code>project=e3sm</code> and <code>project=e3sm-supplement</code>, 
+the size of <strong>500</strong> documents is larger than 10 MB, so we use <code>rows=100</code> in the migration of <code>e3sm</code> and <code>e3sm-supplement</code> projects, and <strong>1500</strong> for other projects.</p>
+</li>
+<li>
+<p>Changes to the Solr document:</p>
+<ul>
 <li>change the value of the <code>index_node</code> to <strong>us_index</strong></li>
-<li>remove the url item if the type of document is <code>Datsets</code></li>
+<li>remove the <code>url</code> item if the type of document is <code>Datsets</code></li>
 </ul>
 </li>
-<li>Filters during the migration:<ul>
+<li>
+<p>Filters during the migration:</p>
+<ul>
 <li>filter out all metadata at the ORNL index if the value of <code>data_node</code> does not include <code>anl.gov</code> and <code>llnl.gov</code> and does not equal <code>esgf-node.ornl.gov</code></li>
 <li>filter out all metadata at the LLNL index when the <code>source_id=E3SM-2-1</code></li>
 </ul>
 </li>
-<li>The metadata of <code>project=e3sm</code> at the ORNL index shall be discarded as the metadata was migrated to the ORNL index, but the real files were not. But half of these metadata have been ingested to the <em>E3SM</em> staged index.</li>
-<li>The formats of the <code>_timestamp</code> strings may differ as there are two APIs to generate them during the publications (<code>YYYY-MM-DDThh:mm:ss.sssZ</code> vs. <code>YYYY-MM-DDThh:mm:ssZ</code>).<ul>
+<li>
+<p>The metadata of <code>project=e3sm</code> at the ORNL index shall be discarded as the metadata was migrated to the ORNL index, but the actual files were not. But half of these metadata have been ingested to the <em>E3SM</em> staged index.</p>
+</li>
+<li>
+<p>The formats of the <code>_timestamp</code> strings may differ as there are two APIs to generate them during the publications (<code>YYYY-MM-DDThh:mm:ss.sssZ</code> vs. <code>YYYY-MM-DDThh:mm:ssZ</code>).</p>
+<ul>
 <li>A legacy API for harvesting thredds catalogs and generating publication records</li>
 <li>the "push" publisher API (esg-publisher)</li>
 </ul>
 </li>
-<li>The solr query used in the migration only searches the default local shard with the port 8983, there is another local shard with port 8995 is only used for GFDL CMIP6 data </li>
-<li>The other shards shown in the LLNL esg_search, they are the "replica" shards at LLNL and are the synced copies of the remote shards. However, the GFDL's remote shard is dead,
-thus, the GFDL local replica shard (port: 8895) could be considered as a local shard for the migration purpose.</li>
-<li>The esg search using the LLNL index is the distributed query by default, however, the distributed shards do not include the ANL and ORNL solr index. 
-The esg search using the ANL or ORNL indexes only searches their local shards even when <code>distrib=True</code>.</li>
+<li>
+<p>The solr query used in the migration only searches the default local shard with port 8983, there is another local shard with port 8995 that is only used for GFDL CMIP6 data </p>
+</li>
+<li>
+<p>The other shards shown in the LLNL esg_search, are the "replica" shards at LLNL and are the synced copies of the remote shards. However, the GFDL's remote shard is dead,
+thus, the GFDL local replica shard (port: 8895) could be considered a local shard for migration purposes.</p>
+</li>
+<li>
+<p>The esg search using the LLNL index is the distributed query by default, however, the distributed shards do not include the ANL and ORNL solr index. 
+The esg search using the ANL or ORNL indexes only searches their local shards even when <code>distrib=True</code>.</p>
+</li>
+<li>
+<p>The Solr query string used in the migration:</p>
+<ul>
+<li>query the default shard (for ANL, LLNL and ORNL default shard with port 8983)
+      <div class="highlight"><pre><span></span><code><span class="k">select</span>?sort<span class="o">=</span>id+asc<span class="p">&amp;</span><span class="nv">rows</span><span class="o">=</span><span class="m">500</span><span class="p">&amp;</span><span class="nv">cursorMark</span><span class="o">=</span>*<span class="p">&amp;</span><span class="nv">wt</span><span class="o">=</span>json<span class="p">&amp;</span><span class="nv">q</span><span class="o">=</span>project:CMIP6<span class="p">&amp;</span><span class="nv">fq</span><span class="o">=</span>_timestamp:<span class="o">[</span>*<span class="w"> </span>TO<span class="w"> </span><span class="m">2025</span>-03-16T00:00:00Z<span class="o">]</span>
+</code></pre></div></li>
+<li>query the additional local shard (only for LLNL index and the shard is used to save the GFDL metadata)
+      <div class="highlight"><pre><span></span><code><span class="k">select</span>?sort<span class="o">=</span>id+asc<span class="p">&amp;</span><span class="nv">rows</span><span class="o">=</span><span class="m">500</span><span class="p">&amp;</span><span class="nv">cursorMark</span><span class="o">=</span>*<span class="p">&amp;</span><span class="nv">wt</span><span class="o">=</span>json<span class="p">&amp;</span><span class="nv">q</span><span class="o">=</span>project:CMIP6<span class="p">&amp;</span><span class="nv">fq</span><span class="o">=</span>_timestamp:<span class="o">[</span>*<span class="w"> </span>TO<span class="w"> </span><span class="m">2025</span>-03-16T00:00:00Z<span class="o">]</span><span class="p">&amp;</span><span class="nv">shards</span><span class="o">=</span>localhost:8995/solr/datasets
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>The esg search query string used in the verfication:</p>
+<ul>
+<li>
+<p>query the default shard (for ANL, LLNL and ORNL default shard with port 8983)
+      <div class="highlight"><pre><span></span><code>search?query<span class="o">=</span>project:CMIP6<span class="p">&amp;</span><span class="nv">limit</span><span class="o">=</span><span class="m">500</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span>*<span class="p">&amp;</span><span class="nv">to</span><span class="o">=</span><span class="m">2025</span>-03-16T00:00:00Z<span class="p">&amp;</span><span class="nv">format</span><span class="o">=</span>application%2Fsolr%2Bjson<span class="p">&amp;</span><span class="nv">distrib</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>query the additional local shard (only for LLNL index and the shard is used to save the GFDL metadata)
+      <div class="highlight"><pre><span></span><code>search?query<span class="o">=</span>project:CMIP6<span class="p">&amp;</span><span class="nv">limit</span><span class="o">=</span><span class="m">500</span><span class="p">&amp;</span><span class="nv">from</span><span class="o">=</span>*<span class="p">&amp;</span><span class="nv">to</span><span class="o">=</span><span class="m">2025</span>-03-16T00:00:00Z<span class="p">&amp;</span><span class="nv">format</span><span class="o">=</span>application%2Fsolr%2Bjson<span class="p">&amp;</span><span class="nv">distrib</span><span class="o">=</span>true<span class="p">&amp;</span><span class="nv">shards</span><span class="o">=</span>localhost:8995/solr
+</code></pre></div></p>
+</li>
+</ul>
+</li>
 </ol>
 
 
@@ -716,7 +764,7 @@ The esg search using the ANL or ORNL indexes only searches their local shards ev
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
