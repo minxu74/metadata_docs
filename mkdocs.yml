@@ -1,9 +1,9 @@
 site_name: Metadata Migrate and Sync
-
-site_url: https://mydomain.org/mysite
-
+site_url: https://minxu74.github.io/metadata_doc
+site_description: >-
+   ESGF-1.5, migration and synchronization status
 repo_name: metadata_migrate_doc
-repo_url: https://github.com/esgf-us2/metadata_migrate_sync
+repo_url: https://github.com/esgf2-us/metadata_migrate_sync
 
 
 theme:
@@ -29,13 +29,9 @@ theme:
       - navigation.tabs
       - content.code.copy
 
-
-
-
 extra_javascript:
   - https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
-
+  - javascripts/extra.js
 
 extra_css:
   - https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator_bootstrap5.min.css
@@ -84,6 +80,15 @@ plugins:
         start: <!--start-->
         end: <!--end-->
         recursive: true
+   - git-revision-date-localized:
+       enable_creation_date: true
+       fallback_to_build_date: true
+       type: iso_date
+       timezone: America/New_York
+       locale: en
+       enabled: true
+       strict: false
+
 
 nav:  
    - About:
