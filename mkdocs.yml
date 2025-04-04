@@ -50,6 +50,7 @@ markdown_extensions:
         permalink: true
    - md_in_html
    - attr_list
+   - pymdownx.betterem
    - pymdownx.snippets:
         auto_append:
           - includes/glossary.md
@@ -97,5 +98,7 @@ nav:
        - Migration/index.md
    - Synchronization:
        - Synchronization/index.md
+   - Validation:
+       - Validation/index.md
    - Notes:
        - Notes/notes.md

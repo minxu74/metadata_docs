@@ -22,9 +22,3 @@ from [ESGF-1.5-desgin](https://github.com/esgf2-us/esgf-1.5-design/tree/main)
 2. [changes.md](https://github.com/esgf2-us/esgf-1.5-design/blob/main/changes.md)
 3. [indexes.md](https://github.com/esgf2-us/esgf-1.5-design/blob/main/indexes.md)
 
-<!--
-{%
-  include "chart1.md"
-%}
--->
-

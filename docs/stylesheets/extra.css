@@ -99,13 +99,19 @@ table tr td div{
   padding:3px;
 }
 
-/* Set a fixed size for all pie charts */
-.mermaid .pieCircle {
-  r: 100px !important; /* Adjust radius as needed */
+
+/* Mermaid's default SVG class */
+.mermaid svg[id^="__mermaid-"] {
+  height: 500px !important;
+}
+/* Target pie charts specifically */
+.mermaid .pieChart {
+    height: 500px !important;
+    width: 200% !important;
 }
 
-/* Or control the SVG container */
+/* Or target all Mermaid SVGs */
 .mermaid svg {
-  width: 300px;
-  height: 300px;
+    max-height: 500px !important;
+    min-height: 500px !important;
 }

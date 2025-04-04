@@ -126,8 +126,3 @@ title: Migration Status
 === "obs4MIPs"
     <div id="tab_obs4mips_files"></div>
 
-<!--
-{%
-  include "chart1.md"
-%}
--->
