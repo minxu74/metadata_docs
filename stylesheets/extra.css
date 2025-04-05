@@ -115,3 +115,20 @@ table tr td div{
     max-height: 500px !important;
     min-height: 500px !important;
 }
+
+.node-labels {
+    fill: #e0e0e0 !important;  /* Light gray for dark backgrounds */
+}
+.mermaid text {
+    fill: #e0e0e0 !important;  /* Light gray for dark backgrounds */
+}
+
+.__mermaid_1{
+    fill: #e0e0e0 !important;  /* Light gray for dark backgrounds */
+}
+
+#__mermaid_2 .pieTitleText {
+    fill: #e0e0e0 !important;  /* Light gray for dark backgrounds */
+}
+
+div.mermaid svg .node > g > text { fill: red !important; }

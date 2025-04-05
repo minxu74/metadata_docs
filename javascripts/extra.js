@@ -1,8 +1,6 @@
 // Sample data
 document.addEventListener("DOMContentLoaded", function() {
 
-  console.log(window.location.pathname)
-
   if (!window.location.pathname.includes("Migration") && !window.location.pathname.includes("Synchronization")){
     return;
   }
