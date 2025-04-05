@@ -37,7 +37,6 @@ extra_css:
   - https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator_bootstrap5.min.css
   - stylesheets/extra.css
 
-
 # extensions
 markdown_extensions:
    - abbr
@@ -57,15 +56,13 @@ markdown_extensions:
    - def_list
    - pymdownx.details # add collapsible call-outs
    - footnotes
-   - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
    - pymdownx.tabbed:
         alternate_style: true
-
-
+   - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
 
 # plugins
 plugins:
