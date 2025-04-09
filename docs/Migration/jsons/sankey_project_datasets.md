@@ -13,21 +13,21 @@ cmip3,public,87993
 
 ANL, cmip5,35148
 LLNL,cmip5,62791
-ORNL,cmip5,62791
+ORNL,cmip5,57109
 
 ANL, Skipped,0
 LLNL,Skipped,0
-ORNL,Skipped,0
+ORNL,Skipped,21960
 
 cmip5,public,133088
 
 ANL, cmip6,5686552
 LLNL,cmip6,9080328
-ORNL,cmip6,9080328
+ORNL,cmip6,9037273
 
 ANL, Skipped,0
 LLNL,Skipped,997
-ORNL,Skipped,997
+ORNL,Skipped,3074192
 
 cmip6,public,20728964
 
@@ -37,7 +37,7 @@ ORNL,create-ip,112
 
 ANL, Skipped,0
 LLNL,Skipped,0
-ORNL,Skipped,0
+ORNL,Skipped,112
 
 create-ip,public,112
 
@@ -57,7 +57,7 @@ ORNL,geomip,290
 
 ANL, Skipped,0
 LLNL,Skipped,0
-ORNL,Skipped,0
+ORNL,Skipped,290
 
 geomip,public,290
 
@@ -67,7 +67,7 @@ ORNL,lucid,131
 
 ANL, Skipped,0
 LLNL,Skipped,0
-ORNL,Skipped,0
+ORNL,Skipped,131
 
 lucid,public,131
 
@@ -77,7 +77,7 @@ ORNL,tamip,192
 
 ANL, Skipped,0
 LLNL,Skipped,0
-ORNL,Skipped,0
+ORNL,Skipped,192
 
 tamip,public,192
 
