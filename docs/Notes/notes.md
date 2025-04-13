@@ -25,10 +25,11 @@ the size of **500** documents is larger than 10 MB, so we use `rows=100` in the 
     - A legacy API for harvesting thredds catalogs and generating publication records
     - the "push" publisher API (esg-publisher)
 
-9. The solr query used in the migration only searches the default local shard with port 8983, there is another local shard with port 8995 that is only used for GFDL CMIP6 data 
+9. The solr query used in the migration only searches the default local shard with port 8983, there is another local shard with port 8995 that is only used for GFDL CMIP6 data. {++MX: It is not true anymore. 
+There were CMIP5 data in the local shard with port 8995 too. So we migrated the CMIP5 and CMIP5 metadata on the shard. On Apr. 12, 2025, we found that the ==obs4MIPs and other projects== are in the shared too!!!++}
 
 10. The other shards shown in the LLNL esg_search, are the "replica" shards at LLNL and are the synced copies of the remote shards. However, the GFDL's remote shard is dead,
-thus, the GFDL local replica shard (port: 8895) could be considered a local shard for migration purposes.
+thus, the GFDL local replica shard (port: 8995) could be considered a local shard for migration purposes.
 
 11. The esg search using the LLNL index is the distributed query by default, however, the distributed shards do not include the ANL and ORNL solr index. 
 The esg search using the ANL or ORNL indexes only searches their local shards even when `distrib=True`.
@@ -53,3 +54,23 @@ The esg search using the ANL or ORNL indexes only searches their local shards ev
           ```bash
           search?query=project:CMIP6&limit=500&from=*&to=2025-03-16T00:00:00Z&format=application%2Fsolr%2Bjson&distrib=true&shards=localhost:8995/solr
           ```
+
+
+14. The following metadata are considered as errors or test datasets/files and shall be deleted from the public index:
+    - metadata with the data node is `lapdat02-p.gfdl.noaa.gov` (1 dataset and 16 files)
+    - metadata with the data node is `esgf-node.cels.anl.gov` ( 1 dataset and 3 files)
+
+
+15. The master and slave Solr indexes are not the same. The slave Solr index is connected to the `esgf-node.ornl.gov`. They should be synced with each other, but they did not. So we found that:
+    - For input4MIPs project, the count of the metadata in the master solr index is less than that in the slave index. (3 datasets and 3 files less)
+
+16. After our first migration on March 31, 2025, there were several retracts on the data node `crd-esgf-drc.ec.gc.ca` and `esgf-data1.llnl.gov`. How do we handle the retractions?
+
+17. ==Synchronizer design:==
+
+    - It is run every 5 minutes under the crontab in a container at ORNL.
+    - The query time window is 5 minutes, from the 20 to 15 minutes before the start time of the synchronizer.
+    - Only one instance is allowed to run. So if the previous sync does not stop after 5 minutes, the new sync won't start and will wait for another 5 minutes to start till the previous sync ends.
+    - The UTC time in the synchronizer is obtained from the internet NTP sever (`pool.ntp.org`) with two web APIs 
+      (`http://worldtimeapi.org/api/timezone/Etc/UTC` and `https://timeapi.io/api/Time/current/zone?timeZone=UTC`) and system time as backups.
+

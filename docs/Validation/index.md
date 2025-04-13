@@ -1,10 +1,8 @@
 ---
 hide:
-  - navigation
+  - toc
 title: Validation and Verification
 ---
-
-# Project level
 
 ## Sankey Diagram
 
@@ -19,26 +17,7 @@ Files:
    include "Migration/jsons/sankey_project_files.md"
 %}
 
-## Contributions of three Solr index to the public index for each project
-{%
-  include "Migration/jsons/chart_project.md"
-%}
 
-## Tables of counts of documents in the Solr and public indexes
-
-!!! tip "Caption"
-    - `numFound`: the total number of documents from a Solr query
-    - `Total records`: the total number of documents to be ingested from the database files
-    - `skipped records`: the number of documents skipped (see Notes)
-    - `Ingested`: the number of documents to be ingested successfully. Generally it equals to the `Total records-skipped records-failed ingested` 
-    - `Entries`: the number of documents in the public index using the globus query
-{%
-  include "Migration/jsons/table_project.md"
-%}
-
-# institution_id level
-
-# source_id level
 
 <script>
 
@@ -58,10 +37,9 @@ Files:
         subtree: true
     });
 
-    // Function to style node labels
     function styleNodeLabels() {
         const nodeLabels = document.querySelectorAll('.node-labels');
         nodeLabels[0].style.fill = "#FF0099";
 
-    }
+    };
 </script>
