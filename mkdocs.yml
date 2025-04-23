@@ -105,5 +105,6 @@ nav:
        - Validation/index.md
        - Project verification: Validation/project_verification.md
        - Data node verification: Validation/data_node_verification.md
+       - Institution id verification: Validation/institution_id_verification.md
    - Notes:
        - Notes/notes.md
