@@ -63,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function load_json (title, proj, meta) {
-      fetch("./jsons/" + proj + "_" + meta + "_summary.json")
+      //fetch("./jsons/" + proj + "_" + meta + "_summary.json")
+      fetch("https://raw.githubusercontent.com/esgf2-us/metadata_migrate_sync/refs/heads/main/docs/Synchronization/jsons/" + proj + "_" + meta + "_summary.json")
         .then(response => response.json())
         .then(data => {
           var table = new Tabulator("#tab_" + proj + "_" + meta, {
